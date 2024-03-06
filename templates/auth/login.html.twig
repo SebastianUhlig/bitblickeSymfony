@@ -1,0 +1,45 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto p-8">
+        <div class="flex items-center">
+            <div class="max-w-md space-y-10">
+                <h1 class="text-6xl leading-tight">
+                    Login
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-8">
+        <div class="max-w-lg mx-auto border border-solid border-dark-0 p-8 rounded-xl"> class="flex flex-col space-y-6"
+            {{ form_start(loginForm) }}
+                {% include 'elements/input-group.html.twig' with
+                    {
+                        'id': {{ field_name(loginForm.email) }},
+                        'type': 'email',
+                        'name': 'email',
+                        'value': '',
+                        'placeholder': 'E-Mail-Adresse',
+                        'label': 'E-Mail-Adresse',
+                    }
+                %}
+
+                {% include 'elements/input-group.html.twig' with
+                    {
+                        'id': '_password',
+                        'type': 'password',
+                        'name': 'password',
+                        'value': '',
+                        'placeholder': 'Passwort',
+                        'label': 'Passwort',
+                    }
+                %}
+
+                {% include 'elements/button.html.twig' with {'title': 'Anmelden', 'primary': true, 'button': true} %}
+            {{ form_end(loginForm) }}
+        </div>
+    </div>
+{% endblock %}

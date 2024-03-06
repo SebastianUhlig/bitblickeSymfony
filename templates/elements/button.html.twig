@@ -1,0 +1,37 @@
+{% if transparent is defined and true %}
+    <{% if button is defined and true %}button type="submit"{% else %}a href="{{ link }}"{% endif %} class="py-4 px-8 rounded-xl relative
+        inline-block
+        bg-transparent text-dark-0
+        border border-solid border-dark-0
+        hover:bg-primary-0 transition-all ease-linear duration-200
+    ">
+        {{ title }}
+    </{% if button is defined and true %}button {% else %}a{% endif %}>
+{% elseif dark is defined and true %}
+    <{% if button is defined and true %}button type="submit"{% else %}a href="{{ link }}"{% endif %} class="py-4 px-8 rounded-xl relative
+        inline-block
+        bg-dark-0 text-white
+        border border-solid border-dark-0
+        hover:bg-primary-0 hover:text-dark-0 transition-all ease-linear duration-200
+    ">
+        {{ title }}
+    </{% if button is defined and true %}button {% else %}a{% endif %}>
+{% elseif primary is defined and true %}
+    <{% if button is defined and true %}button type="submit"{% else %}a href="{{ link }}"{% endif %} class="py-4 px-8 rounded-xl relative
+        inline-block
+        bg-primary-0 text-dark-0
+        border border-solid border-dark-0
+        hover:bg-white hover:text-dark-0 transition-all ease-linear duration-200
+    ">
+        {{ title }}
+    </{% if button is defined and true %}button {% else %}a{% endif %}>
+{% else %}
+    <{% if button is defined and true %}button type="submit"{% else %}a href="{{ link }}"{% endif %} class="py-4 px-8 rounded-xl relative
+        inline-block
+        bg-transparent text-dark-0
+        border border-solid border-dark-0
+        hover:bg-primary-0 transition-all ease-linear duration-200
+    ">
+        {{ title }}
+    </{% if button is defined and true %}button {% else %}a{% endif %}>
+{% endif %}

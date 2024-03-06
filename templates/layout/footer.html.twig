@@ -1,5 +1,50 @@
-<div class="p-4 text-white bg-blue-700">
-    <div class="mx-auto container flex">
-        Footer Content
+<footer class="mx-auto container p-12 min-h-60 text-white bg-dark-0 rounded-t-3xl">
+    <div class="w-full flex justify-between">
+        <div>
+            {% include 'layout/inverted-logo.html.twig' %}
+        </div>
+        <nav class="space-x-4">
+            {% include 'elements/nav-link.html.twig' with {'link': '/', 'title': 'Startseite'} %}
+            {% include 'elements/nav-link.html.twig' with {'link': '/ueber-uns', 'title': 'Über uns'} %}
+            {% include 'elements/nav-link.html.twig' with {'link': '/blog', 'title': 'Blog'} %}
+        </nav>
+        <div>
+            SOCIAL MEDIA
+        </div>
     </div>
-</div>
+    <div class="w-full flex justify-between">
+        <div>
+            <h4>Contact us:</h4>
+            <ul>
+                <li>E-Mail: mustermann@email.com</li>
+                <li>Tel.: +49 123456789</li>
+                <li>Adresse: 1234 Main Street<br>Moonstone City, Stardust State 12345</li>
+            </ul>
+        </div>
+        <div class="bg-dark-1 py-14 px-10 flex justify-center items-center rounded-xl">
+            <form action="/newsletter-abonnieren" method="POST" class="flex space-x-6">
+                {% include 'elements/input-group.html.twig' with
+                    {
+                        'id': '_newsletter_email',
+                        'type': 'email',
+                        'name': 'newsletter_email',
+                        'value': '',
+                        'placeholder': 'E-Mail-Adresse',
+                        'bigInput': true,
+                        'schema': 'light',
+                    }
+                %}
+                {% include 'elements/button.html.twig' with {'title': 'Newsletter abonnieren', 'primary': true, 'button': true} %}
+            </form>
+        </div>
+    </div>
+    <div class="w-full space-x-8">
+        <span>
+            &copy; 2023 bitblicke. Programmierer mit &hearts;<br/>
+            Alle Rechte vorbehalten.
+        </span>
+        <span>
+            Impressum & Datenschutz
+        </span>
+    </div>
+</footer>

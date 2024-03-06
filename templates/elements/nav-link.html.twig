@@ -1,0 +1,10 @@
+{% if forHeader is defined and true %}
+    <a href="{{ link }}" class="py-4 px-2 relative
+            before:content-[''] before:absolute before:block before:w-full before:h-[2px]
+            before:bottom-0 before:left-0 before:bg-dark-0
+            before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
+            before:transition before:ease-linear before:duration-200">{{ title }}</a>
+{% else %}
+    <a href="{{ link }}" class="py-4 px-2 hover:text-primary-0 underline transition-colors ease-linear duration-200">{{ title }}</a>
+{% endif %}
+

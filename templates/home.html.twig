@@ -1,0 +1,57 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block title %}Startseite{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto p-8">
+        <div class="flex items-center">
+            <div class="max-w-xl space-y-10">
+                <h1 class="text-6xl leading-tight">
+                    Individuelle Programmierlösungen aus der Rheinmetropole
+                </h1>
+                <p class="text-xl">
+                    Entdecken Sie maßgeschneiderte Programmierlösungen von erfahrenen Experten. Unsere individuelle Softwareentwicklung und Programmierdienstleistungen bieten Ihnen innovative Lösungen für Ihre Projekte. Lassen Sie uns gemeinsam Ihre Ideen in digitale Realität umsetzen.
+                </p>
+                {% include 'elements/button.html.twig' with {'link': '/kontakt', 'title': 'Book a consultation', 'dark': true} %}
+            </div>
+            <div class="ml-auto">
+                SOME COOL IMAGE
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-8">
+        <div class="flex flex-row items-center justify-between space-x-8">
+            <div>LOGO A</div>
+            <div>LOGO B</div>
+            <div>LOGO C</div>
+            <div>LOGO D</div>
+            <div>LOGO E</div>
+            <div>LOGO F</div>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-8">
+        {% block services %}{% endblock %}
+    </div>
+
+    <div class="container mx-auto p-8">
+        {% block cta %}{% endblock %}
+    </div>
+
+    <div class="container mx-auto p-8">
+        {% block work_progress %}{% endblock %}
+    </div>
+
+    <div class="container mx-auto p-8">
+        {% block team %}{% endblock %}
+    </div>
+
+    <div class="container mx-auto p-8">
+        {% block testimonials %}{% endblock %}
+    </div>
+
+    <div class="container mx-auto p-8">
+        {% block contactform %}{% endblock %}
+    </div>
+{% endblock %}

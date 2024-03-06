@@ -21,8 +21,8 @@ class UserFixtures extends Fixture
         $user = new User();
         $user->setName('John Doe');
         $user->setPassword($this->passwordHasher->hashPassword($user, 'password'));
-        //$user->setCreatedAt(\DateTimeImmutable::);
-        //$user->setUpdatedAt(\DateTimeImmutable::);
+        $user->setCreatedAt(\DateTimeImmutable::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s')));
+        $user->setUpdatedAt(\DateTimeImmutable::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s')));
         $manager->persist($user);
 
         $manager->flush();
